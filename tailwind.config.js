@@ -7,11 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      backgroundImage: {
+        'radial-gradient': 'radial-gradient(ellipse, #0033FF 40%, #001f9960 65%)',
+      },
+      boxShadow: {
+        'bottom-right': '8px 8px 4px rgba(255, 213, 33, 90)', // Sombra enfocada en la parte inferior derecha
+      },
+      fontFamily: {
+        montserrat: ["Montserrat", 'sans-serif'],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 };
