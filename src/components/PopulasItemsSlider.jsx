@@ -10,7 +10,7 @@ const PopularItemsSlider = ({ isLoading, popularItems, handleClick, URL }) => {
   const adjustedSettings = {
     dots: false,
     infinite: popularItems.length > 5,
-    slidesToShow: Math.min(5, popularItems.length),
+    slidesToShow: popularItems.length > 0 ? Math.min(5, popularItems.length) : 1,
     slidesToScroll: 1,
     speed: 8000,
     arrows: false,

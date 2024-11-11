@@ -12,7 +12,7 @@ const ItemSlider = ({ isLoading, displayedItems, handleOpenModal, URL }) => {
     infinite: false,
     speed: 500,
     arrows: true,
-    slidesToShow: displayedItems.length >= 5 ? 5 : displayedItems.length,
+    slidesToShow: displayedItems.length > 0 ? Math.min(5, displayedItems.length) : 1,
     slidesToScroll: 2,
     swipe: displayedItems.length >= 3,
     responsive: [

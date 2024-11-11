@@ -1,6 +1,6 @@
 import Nav from '../components/Nav'
 import Hero from '../components/Hero'
-// import About from '../components/About'
+//import About from '../components/About'
 // import Carousel from '../components/Carousel'
 // import Features from '../components/Features'
 // import Contact from '../components/Contact'
@@ -23,12 +23,12 @@ export default function Home() {
              {/* <Map />  */}
           </section> 
         </div>
-        {/* <section className='relative h-min-screen w-full' id='about'>
+         <section className='relative h-min-screen w-full' id='about'>
           <div className='bg-[#FFD521] h-min-screen w-full absolute inset-0 z-[0]'>
           </div>
-          <About />
+          {/* <About /> */}
         </section>
-        <section id='benefit' className='relative bg-[url("https://st.depositphotos.com/2125215/2599/v/450/depositphotos_25996281-stock-illustration-blue-circles-with-sparkles-vector.jpg")]  bg-cover h-[85vh] w-full flex justify-center items-center'>
+        {/* <section id='benefit' className='relative bg-[url("https://st.depositphotos.com/2125215/2599/v/450/depositphotos_25996281-stock-illustration-blue-circles-with-sparkles-vector.jpg")]  bg-cover h-[85vh] w-full flex justify-center items-center'>
           <Carousel />
         </section>
         <section className='relative h-min-screen bg-[#FFD521]'>
@@ -41,7 +41,7 @@ export default function Home() {
         </section>
         <section className='relative h-min-screen'>
           <Footer />
-        </section> */}
+        </section>  */}
       </main> 
     </div>
   )
