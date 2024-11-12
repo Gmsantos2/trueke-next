@@ -41,7 +41,7 @@ const Carousel = () => {
 
   return (
     <div className="slider-2 relative carousel-container max-lg:w-[90vw] py-8">
-      <h2 className="text-center text-[#1E1E1E] font-semibold font-montserrat text-2xl md:text-3xl mb-8 pt-10">
+      <h2 className="text-center text-[#ffff] font-semibold font-montserrat text-2xl md:text-3xl mb-8 pt-10">
         ¿Por qué elegir TRUEKE?
       </h2>
       <JackInTheBox>

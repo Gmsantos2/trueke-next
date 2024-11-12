@@ -48,7 +48,7 @@ const ItemDetail = ({ id }) => {
     <div style={{ backgroundColor: item.colors.bg, color: item.colors.text, minHeight: '100vh' }} className="p-4 min-h-screen space-y-4">
       {/* Logo en la esquina superior izquierda */}
       <div className="absolute top-4 left-4">
-        <img src={`${URL}${item.logo}`} alt="Logo" className="h-40 max-md:h-16 w-auto" />
+        <img src={`${URL}${item.logo}`} alt="Logo" className="h-[240px] max-md:h-16 w-auto" />
       </div>
 
       {/* Popularidad */}
@@ -66,7 +66,7 @@ const ItemDetail = ({ id }) => {
       </div>
 
       {/* Contenedor para el carrusel y la información */}
-      <div className="flex h-[30vh] flex-col max-sm:h-[50vh] max-sm:pt-14 content-center items-center gap-8">
+      <div className="flex h-[30vh] flex-col max-sm:h-[50vh] max-sm:pt-14 content-center items-center gap-8 ml-10">
         {/* Información principal */}
         <div className="md:w-2/3 max-sm:-1/2 text-center mt-3 flex flex-col items-center justify-start">
           <h1 className="text-4xl font-bold font-montserrat whitespace-nowrap" style={{ color: item.colors?.['text'] || 'white' }}>

@@ -19,7 +19,7 @@ const Footer = () => {
 
                 {/* Acerca de Nosotros */}
                 <div className="text-[#1E1E1E] p-8 rounded-lg max-w-md mx-auto max-lg:hidden">
-                    <h2 className="text-justify text-xl font-semibold uppercase mb-4 text-black">
+                    <h2 className="text-justify text-xl font-semibold uppercase mb-4 ">
                         Acerca de Nosotros
                     </h2>
                     <p className="text-base leading-relaxed mb-6 text-justify">
@@ -43,19 +43,19 @@ const Footer = () => {
                 {/* Links */}
                 <Flip>
                     <div className='text-center md:text-left flex justify-center items-center'>
-                        <ul className='flex flex-col gap-2 text-[#1E1E1E] text-base font-montserrat space-y-1 h-full'>
-                            <li>
-                                <a href="#" className='hover:text-white p-2 rounded transition-colors duration-300'>
+                        <ul className='flex flex-col gap-2 text-white text-base font-montserrat space-y-1 h-full'>
+                            <li className= 'bg-[#0033FF] rounded-md p-1'>
+                                <a href="#" className='hover:text-[#FFD521] p-2 rounded transition-colors duration-300'>
                                     Sobre nosotros
                                 </a>
                             </li>
-                            <li>
-                                <a href="#" className='hover:text-white p-2 rounded transition-colors duration-300'>
+                            <li className= 'bg-[#0033FF] rounded-md p-1'>
+                                <a href="#" className='hover:text-[#FFD521] p-2 rounded transition-colors duration-300'>
                                     Beneficios
                                 </a>
                             </li>
-                            <li>
-                                <a href="#" className='hover:text-white p-2 rounded transition-colors duration-300'>
+                            <li className= 'bg-[#0033FF] rounded-md p-1'>
+                                <a href="#" className='hover:text-[#FFD521] p-2 rounded transition-colors duration-300'>
                                     Contacto
                                 </a>
                             </li>

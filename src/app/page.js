@@ -28,7 +28,8 @@ export default function Home() {
           </div>
           <About />
         </section>
-        <section id='benefit' className='relative bg-[url("https://st.depositphotos.com/2125215/2599/v/450/depositphotos_25996281-stock-illustration-blue-circles-with-sparkles-vector.jpg")]  bg-cover h-[85vh] w-full flex justify-center items-center'>
+        <section id='benefit' className='relative bg-[#0033FF]  bg-cover h-[85vh] w-full flex justify-center items-center'>
+        {/* bg-[url("https://st.depositphotos.com/2125215/2599/v/450/depositphotos_25996281-stock-illustration-blue-circles-with-sparkles-vector.jpg")] */}
           <Carousel />
         </section>
         <section className='relative h-min-screen bg-[#FFD521]'>

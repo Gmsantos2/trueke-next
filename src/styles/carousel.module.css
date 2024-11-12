@@ -47,8 +47,13 @@
 }
 
 .slick-dots {
+  color: #ffff !important;
   padding-top: 6px;
   position: relative !important;
+}
+
+.slick-dots button{
+  color: #ffff !important;
 }
 
 
