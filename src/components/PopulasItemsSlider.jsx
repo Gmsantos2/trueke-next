@@ -12,12 +12,13 @@ const PopularItemsSlider = ({ isLoading, popularItems, handleClick, URL }) => {
     infinite: popularItems.length > 5,
     slidesToShow: popularItems.length > 0 ? Math.min(5, popularItems.length) : 1,
     slidesToScroll: 1,
-    speed: 8000,
+    speed: 2000,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 100,
-    cssEase: 'linear',
-    pauseOnHover: false,
+    autoplaySpeed: 3000,
+    cssEase: 'ease-in-out',
+    pauseOnHover: true, 
+    pauseOnFocus: true,
     swipe: true,
     responsive: [
       {

@@ -12,3 +12,65 @@
   .image-animated {
     animation: fadeInScale 1s ease-in-out;
   }
+
+/* Opcional: Cambiar el color */
+.slider-1 .slick-prev:before,
+.slider-1 .slick-next:before {
+  color: #FFD521; /* Cambia el color de los íconos */
+  transform: scale(1.5); /* Escalar íconos */
+  font-size: 40px;
+}
+
+ .slider-f .slick-track {
+  display: flex !important; 
+  flex-wrap: nowrap !important; 
+  justify-content: left !important;
+  
+} 
+
+ .slider-f .slick-list {
+  display: flex;
+  justify-content: left;
+  
+} 
+
+.slider-1 .slick-next,
+.slider-1 .slick-prev {
+  position: absolute; /* Permite que los botones se coloquen en el contenedor */
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%); /* Ajusta la posición para centrar correctamente */
+  background-color: none; /* Color de fondo para la flecha derecha */
+  border: none; /* Sin borde */
+  width: 90px; /* Ancho del botón */
+  height: 90px; /* Alto del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  z-index: 100; /* Asegura que esté por encima de otros elementos */
+}
+
+.slider-1 .slick-next {
+    right: -40px; /* Distancia del borde derecho */
+    z-index: 10;
+  }
+  
+  .slider-1 .slick-prev {
+    left: -40px; /* Distancia del borde izquierdo */
+    z-index: 10;
+  }
+
+  .slider-1 .slick-prev,
+  .slider-1 .slick-next {
+    width: 60px !important; /* Ajusta el ancho según sea necesario */
+    height: 60px !important; /* Ajusta la altura según sea necesario */
+    font-size: 16px; /* Cambia el tamaño de la fuente si usas iconos de texto */
+  }
+
+  @media not all and (min-width: 640px) {
+    .slider-1 .slick-next {
+      right: -10px; /* Distancia del borde derecho */
+    
+    }
+    .slider-1 .slick-prev {
+      left: -10px; /* Distancia del borde izquierdo */
+     
+    }
+}

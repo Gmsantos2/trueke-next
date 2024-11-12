@@ -12,10 +12,10 @@ export const data2 = {
         "imagen": "https://example.com/sierra.jpg",
         "provincias": [
           {
-            "nombre": "Pichincha",
+            "nombre": "Loja",
             "id": "PRO01",
             "descripcion": "Provincia donde se encuentra la capital, Quito.",
-            "imagen": "https://ec.viajandox.com/uploads/Mitad%20del%20Mundo_17.jpg",
+            "imagen": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/cd/ac/f1/photo0jpg.jpg?w=500&h=-1&s=1",
             "cantones": [
               {
                 "nombre": "Quito",

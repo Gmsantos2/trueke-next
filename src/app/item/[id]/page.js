@@ -1,6 +1,6 @@
-//import PublicDetail from '../../../components/PublicDetail'
+import ItemDetail from "@/components/ItemDetails";
 
-export default function Page({ params }) {
-  //return <PublicDetail id={params.id} />
-  return <div>Item {params.id}</div>
+export default async function Page({ params }) {
+  const { id } = await params; 
+  return <ItemDetail id={id} />;
 }

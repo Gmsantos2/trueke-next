@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import Image from 'next/image'
 import Slider from "react-slick"
 
-const ItemSlider = ({ isLoading, displayedItems, handleOpenModal, URL }) => {
+const ItemSlider = ({ isLoading, displayedItems, handleClick, handleOpenModal, URL }) => {
   const sliderRef = useRef(null)
+  const [isDragging, setIsDragging] = useState(false)
 
   const settings = {
     dots: false,
@@ -36,6 +37,10 @@ const ItemSlider = ({ isLoading, displayedItems, handleOpenModal, URL }) => {
       }
     ]
   }
+
+  const handleMouseDown = () => setIsDragging(false)
+  const handleMouseMove = () => setIsDragging(true)
+  const handleMouseUp = (item) => !isDragging && handleClick(item)
 
   const goToFirstSlide = () => {
     if (sliderRef.current) {
@@ -68,6 +73,12 @@ const ItemSlider = ({ isLoading, displayedItems, handleOpenModal, URL }) => {
               <div
                 key={item._id}
                 className="p-2 flex flex-col h-full zoom"
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={() => handleMouseUp(item)}
+                onTouchStart={handleMouseDown}
+                onTouchMove={handleMouseMove}
+                onTouchEnd={() => handleMouseUp(item)}
               >
                 <div className="flex justify-center w-full items-center">
                   <div className="w-[220px] h-[220px]">

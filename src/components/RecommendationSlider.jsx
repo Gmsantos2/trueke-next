@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Slider from "react-slick"
 
-const RecommendationSlider = ({ allRecomendations, handleClickPlaces }) => {
+const RecommendationSlider = ({ allRecomendations, handleClick , handleOpenModal, displayedItems  }) => {
   const [isDragging, setIsDragging] = useState(false)
 
   const settingsRecomendation = {
@@ -44,7 +44,7 @@ const RecommendationSlider = ({ allRecomendations, handleClickPlaces }) => {
 
   const handleMouseDown = () => setIsDragging(false)
   const handleMouseMove = () => setIsDragging(true)
-  const handleMouseUp = (item) => !isDragging && handleClickPlaces(item)
+  const handleMouseUp = () => !isDragging && handleClick()
 
   return (
     <div className="slider-1 p-3">
@@ -64,7 +64,7 @@ const RecommendationSlider = ({ allRecomendations, handleClickPlaces }) => {
               onTouchEnd={() => handleMouseUp(item)}
             >
               <div className="flex justify-center w-full items-center max-sm:h-[50vw]">
-                <div className="relative flex justify-center items-center w-[290px] h-[290px]">
+                <div onClick={() => handleOpenModal(displayedItems)} className="relative flex justify-center items-center w-[290px] h-[290px]">
                   <Image
                     src={item.imagen}
                     alt={item.nombre}

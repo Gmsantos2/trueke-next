@@ -1,50 +1,55 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
-import axios from 'axios'
+import 'leaflet/dist/leaflet.css'
+import L from 'leaflet'
 import throttle from 'lodash/throttle'
+import axios from 'axios'
 
-// Solo importar los componentes de Leaflet después de que el componente se monte en el cliente
-let MapContainer, TileLayer, Marker, Popup, useMap, L;
+const MapContainer = dynamic(
+  () => import('react-leaflet').then((mod) => mod.MapContainer),
+  { ssr: false }
+)
+const TileLayer = dynamic(
+  () => import('react-leaflet').then((mod) => mod.TileLayer),
+  { ssr: false }
+)
+const Marker = dynamic(
+  () => import('react-leaflet').then((mod) => mod.Marker),
+  { ssr: false }
+)
+const Popup = dynamic(
+  () => import('react-leaflet').then((mod) => mod.Popup),
+  { ssr: false }
+)
+const useMap = dynamic(
+  () => import('react-leaflet').then((mod) => mod.useMap),
+  { ssr: false }
+)
 
-if (typeof window !== 'undefined') {
-  // Importar solo en el cliente
-  MapContainer = dynamic(() => import('react-leaflet').then((mod) => mod.MapContainer), { ssr: false });
-  TileLayer = dynamic(() => import('react-leaflet').then((mod) => mod.TileLayer), { ssr: false });
-  Marker = dynamic(() => import('react-leaflet').then((mod) => mod.Marker), { ssr: false });
-  Popup = dynamic(() => import('react-leaflet').then((mod) => mod.Popup), { ssr: false });
-  useMap = dynamic(() => import('react-leaflet').then((mod) => mod.useMap), { ssr: false });
-
-  // Asegurarnos de importar leaflet en el cliente
-  L = require('leaflet');
-  import('leaflet/dist/leaflet.css');
-}
-
-const positionIcon = '/assets/curr_position.png';
-const randomIcon = '/assets/gis_position.png';
+const positionIcon = '/assets/curr_position.png'
+const randomIcon = '/assets/gis_position.png'
 
 const MapCenter = ({ position }) => {
-  const map = useMap();
+  const map = useMap()
   useEffect(() => {
     if (position) {
-      map.setView(position, 15);
+      map.setView(position, 15)
     }
-  }, [position, map]);
+  }, [position, map])
 
-  return null;
-};
+  return null
+}
 
 const Map = () => {
-  const [places, setPlaces] = useState([]);
-  const [selectedPlace, setSelectedPlace] = useState(null);
-  const [currentPosition, setCurrentPosition] = useState([51.505, -0.09]);
-  const [mapPosition, setMapPosition] = useState([51.505, -0.09]);
+  const [places, setPlaces] = useState([])
+  const [selectedPlace, setSelectedPlace] = useState(null)
+  const [currentPosition, setCurrentPosition] = useState([51.505, -0.09])
+  const [mapPosition, setMapPosition] = useState([51.505, -0.09])
 
-  const URL = 'https://trueke.nodo.com.ec';
-  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-
-  const mapRef = useRef(null);
+  const URL = 'https://trueke.nodo.com.ec'
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY
 
   const fetchStores = async () => {
     try {
@@ -52,69 +57,67 @@ const Map = () => {
         headers: {
           'x-api-key': apiKey,
         },
-      });
-      const data = response.data;
-      setPlaces(data.docs);
+      })
+      const data = response.data
+      setPlaces(data.docs)
+      
     } catch (error) {
-      console.error("Error al obtener las tiendas:", error);
+      console.error("Error al obtener las tiendas:", error)
     }
-  };
+  }
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Ahora window está disponible, así que puedes acceder a la geolocalización
-      if ('geolocation' in navigator) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          const { latitude, longitude } = position.coords;
-          setCurrentPosition([latitude, longitude]);
-          setMapPosition([latitude, longitude]);
-          obtenerDatosDeUbicacionLimitado(latitude, longitude);
-        });
-      }
+    if (typeof window !== 'undefined' && 'geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords
+        setCurrentPosition([latitude, longitude])
+        setMapPosition([latitude, longitude])
+        obtenerDatosDeUbicacionLimitado(latitude, longitude)
+      })
     }
-    fetchStores();
-  }, []);
+    fetchStores()
+  }, [])
 
   const obtenerDatosDeUbicacion = async (latitude, longitude) => {
     try {
       const response = await fetch(
         `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
-      );
+      )
       if (response.ok) {
-        const data = await response.json();
-        const addressData = data.address;
+        const data = await response.json()
+        const addressData = data.address
+        // You can use addressData here if needed
       } else {
-        console.error('Error al realizar la solicitud:', response.status);
+        console.error('Error al realizar la solicitud:', response.status)
       }
     } catch (error) {
-      console.error('Error al obtener los datos de la ubicación:', error);
+      console.error('Error al obtener los datos de la ubicación:', error)
     }
-  };
+  }
 
-  const obtenerDatosDeUbicacionLimitado = throttle(obtenerDatosDeUbicacion, 10000);
+  const obtenerDatosDeUbicacionLimitado = throttle(obtenerDatosDeUbicacion, 10000)
 
   const handlePlaceSelect = (place) => {
-    setSelectedPlace(place);
+    setSelectedPlace(place)
     if (place) {
-      const [lon, lat] = place.location.coordinates;
-      setMapPosition([lat, lon]);
+      const [lon, lat] = place.location.coordinates
+      setMapPosition([lat, lon])
     }
-  };
+  }
 
-  // Asegúrate de crear los íconos solo si 'L' está disponible
-  const currentLocationIcon = L ? L.icon({
+  const currentLocationIcon = L.icon({
     iconUrl: positionIcon,
     iconSize: [35, 35],
     iconAnchor: [17, 35],
     popupAnchor: [0, -35],
-  }) : null;
+  })
 
-  const selectedPlaceIcon = L ? L.icon({
+  const selectedPlaceIcon = L.icon({
     iconUrl: randomIcon,
     iconSize: [35, 35],
     iconAnchor: [17, 35],
     popupAnchor: [0, -35],
-  }) : null;
+  })
 
   return (
     <div className="container mx-auto max-w-[1500px] relative">
@@ -135,23 +138,16 @@ const Map = () => {
             >
               <option value="">Elige un lugar</option>
               {places.map((place) => (
-                <option key={place.id} value={place.id}>
+                <option key={place._id} value={place.id}>
                   {place.name}
                 </option>
               ))}
             </select>
           </div>
 
-          {currentPosition && (
+          {typeof window !== 'undefined' && currentPosition && (
             <div>
-              <MapContainer
-                key={`map-${mapPosition[0]}-${mapPosition[1]}`}
-                center={mapPosition} 
-                zoom={11} 
-                zoomControl={false} 
-                style={{ height: '75vh', width: '100%', zIndex: 0 }}
-                ref={mapRef}  
-              >
+              {/* <MapContainer center={mapPosition} zoom={11} zoomControl={false} style={{ height: '75vh', width: '100%', zIndex: 0 }}>
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   attribution="&copy; OpenStreetMap contributors"
@@ -180,13 +176,13 @@ const Map = () => {
                     </Popup>
                   </Marker>
                 )}
-              </MapContainer>
+              </MapContainer> */}
             </div>
           )}
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Map;
+export default Map

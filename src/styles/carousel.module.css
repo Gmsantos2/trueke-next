@@ -1,0 +1,54 @@
+.carousel-container {
+    position: relative;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slider-2 .slide {
+    height: 300px;
+}
+
+.slider-2 .custom-next,
+.slider-2 .custom-prev {
+  position: absolute; /* Permite que los botones se coloquen en el contenedor */
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%); /* Ajusta la posición para centrar correctamente */
+  background-color: none; /* Color de fondo para la flecha derecha */
+  border: none; /* Sin borde */
+  width: 90px; /* Ancho del botón */
+  height: 90px; /* Alto del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  z-index: 10; /* Asegura que esté por encima de otros elementos */
+}
+
+.slider-2 .custom-next {
+  right: 10px; /* Distancia del borde derecho */
+}
+
+.slider-2 .custom-prev {
+  left: 10px; /* Distancia del borde izquierdo */
+}
+
+/* Cambiar el tamaño de las flechas predeterminadas */
+.slider-2 .slick-prev,
+.slider-2 .slick-next {
+  width: 90px !important; /* Ajusta el ancho según sea necesario */
+  height: 90px !important; /* Ajusta la altura según sea necesario */
+  font-size: 24px; /* Cambia el tamaño de la fuente si usas iconos de texto */
+}
+
+/* Opcional: Cambiar el color */
+.slider-2 .slick-prev:before,
+.slider-2 .slick-next:before {
+  color: #1E1E1E; /* Cambia el color de los íconos */
+  transform: scale(1.5); /* Escalar íconos */
+  font-size: 55px;
+}
+
+.slick-dots {
+  padding-top: 6px;
+  position: relative !important;
+}
+
+

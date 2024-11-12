@@ -97,8 +97,8 @@ const HeadSection = () => {
       <h2 className="text-xl font-bold font-montserrat text-white pt-6">Recomendaciones para ti</h2>
       <RecommendationSlider allRecomendations={data2.pais.regiones.flatMap((data) =>
         data.provincias.map((item) => ({ ...item, place_name: data.nombre }))
-      )} handleClickPlaces={handleClickPlaces} />
-      
+      )}  handleClick={handleClick} handleOpenModal={handleOpenModal} displayedItems={displayedItems} />
+      {/* handleClickPlaces={handleClickPlaces} */}
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       
       <TypeFilter data={data} selectedType={selectedType} setSelectedType={setSelectedType} />
@@ -106,6 +106,7 @@ const HeadSection = () => {
       <ItemSlider 
         isLoading={isLoading} 
         displayedItems={displayedItems} 
+        handleClick={handleClick}
         handleOpenModal={handleOpenModal}
         URL={URL}
       />

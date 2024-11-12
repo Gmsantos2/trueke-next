@@ -4,6 +4,10 @@
 
 @import 'slick-carousel/slick/slick.css';
 @import 'slick-carousel/slick/slick-theme.css';
+@import '../styles/hero.module.css';
+@import '../styles/carousel.module.css';
+@import '../styles/verticalSlider.module.css';
+@import '../styles/comments.module.css';
 
 
 :root {
@@ -37,3 +41,4 @@ body {
   transform: rotate(-90deg);
   z-index: 10;
 }
+
