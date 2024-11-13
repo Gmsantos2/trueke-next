@@ -4,7 +4,7 @@ import React from 'react'
 
 const TypeFilter = ({ data, selectedType, setSelectedType }) => {
   return (
-    <div className="overflow-x-scroll bg-yellow-400 rounded-3xl my-5">
+    <div className="overflow-x-scroll bg-yellow-400 rounded-3xl my-5 scrollbar-hide">
       <div className="flex container space-x-3 gap-1 h-full">
         {[...new Set(data.map((shop) => shop.type))].map((type) => (
           <button

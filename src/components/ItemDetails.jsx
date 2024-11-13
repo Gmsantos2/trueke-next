@@ -36,6 +36,7 @@ const ItemDetail = ({ id }) => {
           },
         });
         setItem(data);
+        console.log(data);
         setIsLoading(false);
       } catch (err) {
         setError(err.message);
@@ -60,73 +61,78 @@ const ItemDetail = ({ id }) => {
   const averageScore1 = 9;
 
   return (
-    <div style={{ backgroundColor: item.colors.bg, color: item.colors.text, minHeight: '100vh' }} className="p-4 min-h-screen space-y-4">
-      {/* Logo en la esquina superior izquierda */}
-      <div className="absolute top-4 left-4">
-        <img src={`${URL}${item.logo}`} alt="Logo" className="h-[240px] max-md:h-16 w-auto" />
-      </div>
-
-      {/* Popularidad */}
-      <div className="absolute top-4 right-8 flex flex-col items-center  gap-4">
-
-        <div className="text-4xl">
-          <Emoji averageScore={averageScore.toFixed(1)} />
-        </div>
-        <div className='flex self-center items-center justify-center content-center'>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-yellow-500"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-          >
-            <path d="M10 15l-5.878 3.09 1.121-6.566L0 6.09l6.616-.577L10 0l2.384 5.513L19 6.09l-5.243 5.434 1.121 6.566z" />
-          </svg>
-          <span className="text-xl font-montserrat">{averageScore.toFixed(0)}</span>
-        </div>
-
-
-
-      </div>
-
-      {/* Contenedor para el carrusel y la información */}
-      <div className="flex h-[40vh] flex-col max-sm:h-[50vh] max-sm:pt-14 content-center items-center justify-center gap-8 ml-24">
-        {/* Información principal */}
-        <div className="md:w-2/3 max-sm:-1/2 text-center mt-3 flex flex-col items-center justify-start">
-          <h1 className="text-4xl font-bold font-montserrat whitespace-nowrap" style={{ color: item.colors?.['text'] || 'white' }}>
-            {item.name}
-          </h1>
-          <p className="mt-4 font-montserrat" style={{ color: item.colors?.['text'] || 'white' }}>
-            {item.desc}
-          </p>
-
-          {/* Tags */}
-          <div className="mt-4 flex justify-center gap-5">
-            {item.tags.map((tag, index) => (
-              <span
-                key={index}
-                className="px-2 py-1 rounded-lg"
-                style={{
-                  backgroundColor: item.colors?.button || 'white',
-                  color: item.colors?.['button-text'] || 'white',
-                }}
-              >
-                {tag}
-              </span>
-            ))}
+    <div style={{ backgroundColor: item.colors.bg, color: item.colors.text, minHeight: '100vh' }} className='min-w-[100vw]'>
+      <div className="min-h-screen container mx-auto">
+        {/* Contenedor general */}
+        <div className="relative flex flex-1 flex-col items-center md:flex-row md:items-start md:justify-start w-full">
+          {/* Logo en la esquina superior izquierda en pantallas grandes, centrado en pantallas pequeñas */}
+          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 md:top-4 md:left-4 md:translate-x-0 flex flex-col items-center">
+            <img src={`${URL}${item.logo}`} alt="Logo" className="h-[280px] max-w-xs  max-lg:h-[190px] lg:h-[250px] max-md:h-[240px] w-auto" />
           </div>
+
+
+          {/* Contenedor para el carrusel y la información */}
+          <div className="container mt-[300px] md:mt-0 md:ml-24 flex h-[40vh] flex-col items-center content-center justify-center gap-8">
+            {/* Información principal */}
+            <div className="md:w-2/3 max-sm:w-full text-center mt-3 flex flex-col items-center">
+              <h1 className="text-4xl md:text-xl font-bold font-montserrat md:pl-10" style={{ color: item.colors?.['text'] || 'white' }}>
+                {item.name}
+              </h1>
+              <p className="mt-4 font-montserrat md:pl-10 " style={{ color: item.colors?.['text'] || 'white' }}>
+                {item.desc}
+              </p>
+              {/* Tags */}
+              {/* <div className="mt-4 flex gap-5 overflow-x-scroll scrollbar-hide touch-pan-x max-w-full mx-2"> */}
+              <div className="flex gap-3 overflow-x-scroll  my-5 scrollbar-hide max-w-full ">
+                {item.tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="px-2 py-1 rounded-xl flex-shrink-0"
+                    style={{
+                      backgroundColor: item.colors?.hover || 'white',
+                      color: item.colors['text'] || 'white',
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+            </div>
+          </div>
+
+          {/* Popularidad */}
+          <div className="absolute top-4 right-2 flex flex-col items-center gap-4 max-md:top-16 max-sm:hidden">
+            <div className="text-4xl md:text-5xl">
+              <Emoji averageScore={averageScore.toFixed(1)} />
+            </div>
+            <div className="flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 md:h-8 md:w-8 text-yellow-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+              >
+                <path d="M10 15l-5.878 3.09 1.121-6.566L0 6.09l6.616-.577L10 0l2.384 5.513L19 6.09l-5.243 5.434 1.121 6.566z" />
+              </svg>
+              <span className="text-xl font-montserrat">{averageScore.toFixed(0)}</span>
+            </div>
+          </div>
+
+
         </div>
 
-      </div>
-      <div className='flex flex-col justify-center items-center gap-8 p-6'>
-        <div className='flex justify-center'>
 
-          <div className="flex gap-4">
+
+
+        <div className='flex justify-between gap-8 p-6 max-md:flex-col'>
+          <div className="flex gap-4 max-md:justify-center">
             {/* Botón para Llamada */}
             <div
-              className="flex justify-center items-center h-auto rounded-2xl"
+              className="flex justify-center items-center h-10 rounded-2xl"
               style={{
-                backgroundColor: hoveredItemId === 'call' ? item.colors.hover : item.colors.button,
+                backgroundColor: hoveredItemId === 'call' ? item.colors.button : item.colors.hover,
               }}
             >
               <a href="tel:+123456789" className="flex justify-center !bg-transparent">
@@ -150,7 +156,7 @@ const ItemDetail = ({ id }) => {
 
             {/* Botón para Encontrarnos en el Mapa */}
             <div
-              className="flex justify-center items-center h-auto rounded-2xl"
+              className="flex justify-center items-center h-10 rounded-2xl"
               style={{
                 backgroundColor: hoveredItemId === 'map' ? item.colors.hover : item.colors.button,
               }}
@@ -170,7 +176,7 @@ const ItemDetail = ({ id }) => {
                   <p
                     className="font-montserrat content-center max-sm:hidden"
                     style={{
-                      color: hoveredItemId === 'map' ? item.colors.icon : item.colors['button-text'],
+                      color: hoveredItemId === 'map' ? item.colors['text'] : item.colors['button-text'],
                     }}
                   >
                     Encuentranos
@@ -178,76 +184,85 @@ const ItemDetail = ({ id }) => {
                 </button>
               </a>
             </div>
+
           </div>
-        </div>
 
-        {/* Carrusel de redes sociales */}
-        <div className="flex-none w-[75%] md:w-[60%] relative">
-          {/* Flecha hacia la izquierda */}
-          {itemsCount > 2 && (
-            <div className="absolute left-[-65px] top-1/2 transform -translate-y-1/2 z-10">
-              <button onClick={() => swiperRef.slidePrev()} className="!bg-transparent flex items-center justify-center p-2 transition duration-200">
-                <FiChevronLeft style={{ color: item.colors?.['button-text'], fontSize: '40px' }} className="text-4xl animate-bounce" />
-              </button>
-            </div>
-          )}
+          {/* Carrusel de redes sociales */}
+          <div className="flex flex-1 relative items-center justify-center">
+            <div className="flex flex-col w-[300px] gap-5 relative">
+              <div>
+                <span className="text-2xl md:text-xl font-bold font-montserrat" style={{ color: item.colors?.['text'] || 'white' }}>
+                  Nuestras Redes Sociales
+                </span>
+              </div>
 
-          <Swiper
-            direction="horizontal"
-            pagination={{ clickable: true }}
-            spaceBetween={25}
-            slidesPerView={3}
-            onSwiper={setSwiperRef}
-            style={{ width: '100px' }}
-            breakpoints={{
-              0: {
-                slidesPerView: 4,
-              },
-              768: {
-                slidesPerView: 3,
-              },
-            }}
-          >
-            {item.socials && item.socials.length > 0 &&
-              item.socials.map((items) => (
-                <SwiperSlide key={items.url}>
-                  <div
-                    className=" flex justify-center items-center w-[60px] rounded-2xl"
-                    style={{
-                      backgroundColor: hoveredItemId === items.url ? item.colors.hover : item.colors.button,
-                    }}
-                  >
-                    <a href={items.url} className="flex justify-center !bg-transparent">
-                      <button
-                        className="flex items-center  justify-center p-2 rounded gap-8 !bg-transparent"
-                        onMouseEnter={() => setHoveredItemId(items.url)}
-                        onMouseLeave={() => setHoveredItemId(null)}
+              {/* Flecha hacia la izquierda */}
+              {itemsCount > 3 && (
+                <div className="absolute -left-6 top-[68%] transform -translate-y-1/3 z-10">
+                  <button onClick={() => swiperRef.slidePrev()} className="!bg-transparent flex items-center justify-center p-2 transition duration-200">
+                    <FiChevronLeft style={{ color: item.colors?.['button-text'], fontSize: '30px' }} />
+                  </button>
+                </div>
+              )}
+
+              <Swiper
+                direction="horizontal"
+                pagination={{ clickable: true }}
+                spaceBetween={30}
+                //centeredSlides={itemsCount > 3}
+                slidesPerView={3}
+                onSwiper={setSwiperRef}
+                allowSlideNext={itemsCount > 3}
+                allowSlidePrev={itemsCount > 3}
+                style={{ width: '90%' }}
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                  },
+                  768: {
+                    slidesPerView: itemsCount < 3 ? itemsCount : 3,
+                  },
+                }}
+              >
+                {item.socials && item.socials.length > 0 &&
+                  item.socials.map((items) => (
+                    <SwiperSlide key={items.url} className="!flex !justify-center">
+                      <div
+                        className="flex justify-center items-center w-[60px] rounded-2xl"
+                        style={{
+                          backgroundColor: hoveredItemId === items.url ? item.colors.button : item.colors.hover,
+                        }}
                       >
-                        <SocialIcon name={items.name} color={item.colors.icon} />
-                        {/* <p className="font-montserrat content-center max-sm:hidden" style={{ color: hoveredItemId === items.url ? item.colors.icon : item.colors?.['button-text'] }}>
-                          {items.name}
-                        </p> */}
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
-              ))}
-          </Swiper>
+                        <a href={items.url} className="flex justify-center !bg-transparent">
+                          <button
+                            className="flex items-center justify-center p-2 rounded gap-8 !bg-transparent"
+                            onMouseEnter={() => setHoveredItemId(items.url)}
+                            onMouseLeave={() => setHoveredItemId(null)}
+                          >
+                            <SocialIcon name={items.name} color={item.colors.icon} />
+                          </button>
+                        </a>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+              </Swiper>
 
-          {/* Flecha hacia la derecha */}
-          {itemsCount > 2 && (
-            <div className="absolute right-[-65px] top-1/2 transform -translate-y-1/2 z-10">
-              <button onClick={() => swiperRef.slideNext()} className="!bg-transparent flex items-center justify-center p-2 transition duration-200">
-                <FiChevronRight style={{ color: item.colors?.['button-text'], fontSize: '40px' }} className="text-4xl animate-bounce" />
-              </button>
+              {/* Flecha hacia la derecha */}
+              {itemsCount > 3 && (
+                <div className="absolute -right-6 top-[68%] transform -translate-y-1/3 z-10">
+                  <button onClick={() => swiperRef.slideNext()} className="!bg-transparent flex items-center justify-center p-2 transition duration-200">
+                    <FiChevronRight style={{ color: item.colors?.['button-text'], fontSize: '30px' }} />
+                  </button>
+                </div>
+              )}
             </div>
-          )}
+          </div>
+
         </div>
 
+        <div className='h-80'></div>
+        <Comments />
       </div>
-
-      <div className='h-80'></div>
-      <Comments />
     </div>
   );
 };

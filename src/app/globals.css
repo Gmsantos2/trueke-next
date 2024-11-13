@@ -8,6 +8,7 @@
 @import '../styles/carousel.module.css';
 @import '../styles/verticalSlider.module.css';
 @import '../styles/comments.module.css';
+@import '../styles/item.module.css';
 
 
 :root {
@@ -41,4 +42,5 @@ body {
   transform: rotate(-90deg);
   z-index: 10;
 }
+
 
