@@ -32,7 +32,7 @@ const Modal = ({ modalItems, handleCloseModal, handleClick, URL }) => {
                 onTouchEnd={() => handleMouseUp(item)}
               >
                 <Image src={`${URL}${item.logo}`} alt={item.name} width={160} height={160} className="w-full h-40 object-contain" />
-                <p className="text-center font-montserrat font-light mt-2">{item.name}</p>
+                <p className="text-center text-[#1E1E1E] font-montserrat font-light mt-2">{item.name}</p>
               </div>
             ))}
           </div>

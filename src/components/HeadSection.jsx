@@ -72,7 +72,7 @@ const HeadSection = () => {
       return categoryMatch && searchMatch
     })
     setFilteredItems(filtered)
-    setDisplayedItems(filtered.slice(0, 8))
+    setDisplayedItems(filtered.slice(0, 30))
   }, [data, selectedType, searchTerm])
 
   const handleOpenModal = (items) => {

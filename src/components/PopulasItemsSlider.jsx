@@ -11,15 +11,15 @@ const PopularItemsSlider = ({ isLoading, popularItems, handleClick, URL }) => {
     infinite: true, 
     slidesToShow: popularItems.length > 0 ? Math.min(5, popularItems.length) : 1,
     slidesToScroll: 1, 
-    speed: 4000, 
+    speed: 3000, 
     autoplay: true,
     arrows: false,
     autoplaySpeed: 0, 
     cssEase: 'linear', 
-    //pauseOnFocus: true,
-    //pauseOnHover: true,
-    swipe: true,
-    swipeToSlide: true,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    //swipe: true,
+    //swipeToSlide: true,
     //variableWidth: true,
     responsive: [
       {
@@ -42,6 +42,7 @@ const PopularItemsSlider = ({ isLoading, popularItems, handleClick, URL }) => {
   const handleMouseDown = () => setIsDragging(false);
   const handleMouseMove = () => setIsDragging(true);
   const handleMouseUp = (item) => !isDragging && handleClick(item);
+ 
 
   return (
     <>
@@ -69,7 +70,7 @@ const PopularItemsSlider = ({ isLoading, popularItems, handleClick, URL }) => {
             >
               <div className="flex justify-center items-center h-auto">
                 <div className="flex justify-center items-center w-[200px] h-[200px] rounded-full shadow-md"
-                  style={{ clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%,  0% 30% )' }}>
+                  style={{ clipPath: 'polygon(50% 0%, 84.6% 15.4%, 100% 50%, 84.6% 84.6%, 50% 100%, 15.4% 84.6%, 0% 50%, 15.4% 15.4%, 50% 0%)' }}>
                   <Image
                     src={`${URL}${item.logo}`}
                     alt={item.name}
@@ -79,8 +80,8 @@ const PopularItemsSlider = ({ isLoading, popularItems, handleClick, URL }) => {
                   />
                 </div>
               </div>
-              <div className="flex justify-center">
-                <p className="text-center font-montserrat text-white mt-2 w-[200px] line-clamp-1">
+              <div className="flex  justify-center">
+                <p className="text-center font-montserrat text-white mt-2 w-[200px] ">
                   {item.name}
                 </p>
               </div>

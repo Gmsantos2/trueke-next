@@ -14,8 +14,9 @@ const ItemSlider = ({ isLoading, displayedItems, handleClick, handleOpenModal, U
     speed: 500,
     arrows: true,
     slidesToShow: displayedItems.length > 0 ? Math.min(5, displayedItems.length) : 1,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     swipe: displayedItems.length >= 3,
+    swipeToSlide: true,
     responsive: [
       {
         breakpoint: 1024,

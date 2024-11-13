@@ -8,6 +8,7 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import Comments from '../components/Comments';
 import SocialIcon from '../components/SocialIcon';
 import { FiPhone, FiMapPin } from 'react-icons/fi';
+import Image from 'next/image'
 
 const Emoji = ({ averageScore }) => {
   if (averageScore >= 4) return '😃'; // Excelente
@@ -67,7 +68,19 @@ const ItemDetail = ({ id }) => {
         <div className="relative flex flex-1 flex-col items-center md:flex-row md:items-start md:justify-start w-full">
           {/* Logo en la esquina superior izquierda en pantallas grandes, centrado en pantallas pequeñas */}
           <div className="absolute top-4 left-1/2 transform -translate-x-1/2 md:top-4 md:left-4 md:translate-x-0 flex flex-col items-center">
-            <img src={`${URL}${item.logo}`} alt="Logo" className="h-[280px] max-w-xs  max-lg:h-[190px] lg:h-[250px] max-md:h-[240px] w-auto" />
+            <Image
+              src={`${URL}${item.logo}`}
+              alt="Logo"
+              className="max-w-xs w-auto"
+              width={280} 
+              height={280} 
+              sizes="(max-width: 767px) 260px, (max-width: 1024px) 220px, 250px" 
+              priority 
+              style={{
+                height: 'auto',
+                maxHeight: '280px',
+              }}
+            />
           </div>
 
 
@@ -89,7 +102,7 @@ const ItemDetail = ({ id }) => {
                     key={index}
                     className="px-2 py-1 rounded-xl flex-shrink-0"
                     style={{
-                      backgroundColor: item.colors?.hover || 'white',
+                      backgroundColor: item.colors?.button || 'white',
                       color: item.colors['text'] || 'white',
                     }}
                   >
@@ -99,26 +112,26 @@ const ItemDetail = ({ id }) => {
               </div>
 
             </div>
-      </div>
+          </div>
 
-      {/* Popularidad */}
-      <div className="absolute top-4 right-8 flex flex-col items-center  gap-4">
+          {/* Popularidad */}
+          <div className="absolute top-4 right-8 flex flex-col items-center  gap-4">
 
-        <div className="text-4xl">
-          <Emoji averageScore={averageScore.toFixed(1)} />
-        </div>
+            <div className="text-4xl">
+              <Emoji averageScore={averageScore.toFixed(1)} />
+            </div>
             <div className="flex items-center justify-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 md:h-8 md:w-8 text-yellow-500"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-          >
-            <path d="M10 15l-5.878 3.09 1.121-6.566L0 6.09l6.616-.577L10 0l2.384 5.513L19 6.09l-5.243 5.434 1.121 6.566z" />
-          </svg>
-          <span className="text-xl font-montserrat">{averageScore.toFixed(0)}</span>
-        </div>
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+              >
+                <path d="M10 15l-5.878 3.09 1.121-6.566L0 6.09l6.616-.577L10 0l2.384 5.513L19 6.09l-5.243 5.434 1.121 6.566z" />
+              </svg>
+              <span className="text-xl font-montserrat">{averageScore.toFixed(0)}</span>
+            </div>
           </div>
 
 
@@ -133,7 +146,7 @@ const ItemDetail = ({ id }) => {
             <div
               className="flex justify-center items-center h-10 rounded-2xl"
               style={{
-                backgroundColor: hoveredItemId === 'call' ? item.colors.button : item.colors.hover,
+                backgroundColor: hoveredItemId === 'call' ? item.colors.hover : item.colors.button,
               }}
             >
               <a href="tel:+123456789" className="flex justify-center !bg-transparent">
@@ -146,7 +159,7 @@ const ItemDetail = ({ id }) => {
                   <p
                     className="font-montserrat content-center max-sm:hidden"
                     style={{
-                      color: hoveredItemId === 'call' ? item.colors.hover : item.colors['text'],
+                      color: hoveredItemId === 'call' ? item.colors['button-text'] : item.colors['text'],
                     }}
                   >
                     Llamada
@@ -159,7 +172,7 @@ const ItemDetail = ({ id }) => {
             <div
               className="flex justify-center items-center h-10 rounded-2xl"
               style={{
-                backgroundColor: hoveredItemId === 'map' ? item.colors.button : item.colors.hover,
+                backgroundColor: hoveredItemId === 'map' ? item.colors.hover : item.colors.button,
               }}
             >
               <a
@@ -177,7 +190,7 @@ const ItemDetail = ({ id }) => {
                   <p
                     className="font-montserrat content-center max-sm:hidden"
                     style={{
-                      color: hoveredItemId === 'map' ? item.colors.hover : item.colors['text'],
+                      color: hoveredItemId === 'map' ? item.colors['button-text'] : item.colors.text,
                     }}
                   >
                     Encuentranos
@@ -186,9 +199,9 @@ const ItemDetail = ({ id }) => {
               </a>
             </div>
 
-        </div>
+          </div>
 
-        {/* Carrusel de redes sociales */}
+          {/* Carrusel de redes sociales */}
           <div className="flex flex-1 relative items-center justify-center">
             <div className="flex flex-col w-[300px] gap-5 relative">
               <div>
@@ -197,73 +210,73 @@ const ItemDetail = ({ id }) => {
                 </span>
               </div>
 
-          {/* Flecha hacia la izquierda */}
+              {/* Flecha hacia la izquierda */}
               {itemsCount > 3 && (
                 <div className="absolute -left-6 top-[68%] transform -translate-y-1/3 z-10">
-              <button onClick={() => swiperRef.slidePrev()} className="!bg-transparent flex items-center justify-center p-2 transition duration-200">
+                  <button onClick={() => swiperRef.slidePrev()} className="!bg-transparent flex items-center justify-center p-2 transition duration-200">
                     <FiChevronLeft style={{ color: item.colors?.['button-text'], fontSize: '30px' }} />
-              </button>
-            </div>
-          )}
+                  </button>
+                </div>
+              )}
 
-          <Swiper
-            direction="horizontal"
-            pagination={{ clickable: true }}
+              <Swiper
+                direction="horizontal"
+                pagination={{ clickable: true }}
                 spaceBetween={30}
                 //centeredSlides={itemsCount > 3}
-            slidesPerView={3}
-            onSwiper={setSwiperRef}
+                slidesPerView={3}
+                onSwiper={setSwiperRef}
                 allowSlideNext={itemsCount > 3}
                 allowSlidePrev={itemsCount > 3}
                 style={{ width: '90%' }}
-            breakpoints={{
-              0: {
+                breakpoints={{
+                  0: {
                     slidesPerView: 1,
-              },
-              768: {
+                  },
+                  768: {
                     slidesPerView: itemsCount < 3 ? itemsCount : 3,
-              },
-            }}
-          >
-            {item.socials && item.socials.length > 0 &&
-              item.socials.map((items) => (
+                  },
+                }}
+              >
+                {item.socials && item.socials.length > 0 &&
+                  item.socials.map((items) => (
                     <SwiperSlide key={items.url} className="!flex !justify-center">
-                  <div
+                      <div
                         className="flex justify-center items-center w-[60px] rounded-2xl"
-                    style={{
-                          backgroundColor: hoveredItemId === items.url ? item.colors.button : item.colors.hover,
-                    }}
-                  >
-                    <a href={items.url} className="flex justify-center !bg-transparent">
-                      <button
-                            className="flex items-center justify-center p-2 rounded gap-8 !bg-transparent"
-                        onMouseEnter={() => setHoveredItemId(items.url)}
-                        onMouseLeave={() => setHoveredItemId(null)}
+                        style={{
+                          backgroundColor: hoveredItemId === items.url ? item.colors.hover : item.colors.button,
+                        }}
                       >
-                        <SocialIcon name={items.name} color={item.colors.icon} />
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
-              ))}
-          </Swiper>
+                        <a href={items.url} className="flex justify-center !bg-transparent">
+                          <button
+                            className="flex items-center justify-center p-2 rounded gap-8 !bg-transparent"
+                            onMouseEnter={() => setHoveredItemId(items.url)}
+                            onMouseLeave={() => setHoveredItemId(null)}
+                          >
+                            <SocialIcon name={items.name} color={item.colors.icon} />
+                          </button>
+                        </a>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+              </Swiper>
 
-          {/* Flecha hacia la derecha */}
+              {/* Flecha hacia la derecha */}
               {itemsCount > 3 && (
                 <div className="absolute -right-6 top-[68%] transform -translate-y-1/3 z-10">
-              <button onClick={() => swiperRef.slideNext()} className="!bg-transparent flex items-center justify-center p-2 transition duration-200">
+                  <button onClick={() => swiperRef.slideNext()} className="!bg-transparent flex items-center justify-center p-2 transition duration-200">
                     <FiChevronRight style={{ color: item.colors?.['button-text'], fontSize: '30px' }} />
-              </button>
+                  </button>
+                </div>
+              )}
             </div>
-          )}
-        </div>
           </div>
 
-      </div>
+        </div>
 
-      <div className='h-80'></div>
-      <Comments />
-    </div>
+        <div className='h-80'></div>
+        <Comments />
+      </div>
     </div>
   );
 };
