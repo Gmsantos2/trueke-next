@@ -145,7 +145,7 @@ const ItemDetail = ({ id }) => {
                   <p
                     className="font-montserrat content-center max-sm:hidden"
                     style={{
-                      color: hoveredItemId === 'call' ? item.colors.icon : item.colors['button-text'],
+                      color: hoveredItemId === 'call' ? item.colors.hover : item.colors['text'],
                     }}
                   >
                     Llamada
@@ -158,7 +158,7 @@ const ItemDetail = ({ id }) => {
             <div
               className="flex justify-center items-center h-10 rounded-2xl"
               style={{
-                backgroundColor: hoveredItemId === 'map' ? item.colors.hover : item.colors.button,
+                backgroundColor: hoveredItemId === 'map' ? item.colors.button : item.colors.hover,
               }}
             >
               <a
@@ -176,7 +176,7 @@ const ItemDetail = ({ id }) => {
                   <p
                     className="font-montserrat content-center max-sm:hidden"
                     style={{
-                      color: hoveredItemId === 'map' ? item.colors['text'] : item.colors['button-text'],
+                      color: hoveredItemId === 'map' ? item.colors.hover : item.colors['text'],
                     }}
                   >
                     Encuentranos
