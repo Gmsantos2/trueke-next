@@ -22,6 +22,11 @@
   z-index: 10; /* Asegura que esté por encima de otros elementos */
 }
 
+.slick-dots li button:before {
+  
+  color: white !important;
+}
+
 .slider-2 .custom-next {
   right: 10px; /* Distancia del borde derecho */
 }

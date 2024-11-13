@@ -46,7 +46,7 @@ const Carousel = () => {
       </h2>
       <JackInTheBox>
         <Slider {...settings}>
-          <div className="slide container bg-[#FFE680] rounded-lg p-6 md:p-8 shadow-lg">
+          <div className="slide container bg-[#FFD521] rounded-lg p-6 md:p-8 shadow-lg">
             <div className='flex flex-row h-[90%] justify-center items-center content-center'>
               <div className="flex justify-end w-[20%]">
                 <Image
@@ -69,7 +69,7 @@ const Carousel = () => {
           </div>
 
           {/* Slide 2 */}
-          <div className="slide container bg-[#FFE680] rounded-lg p-6 md:p-8 shadow-lg">
+          <div className="slide container bg-[#FFD521] rounded-lg p-6 md:p-8 shadow-lg">
             <div className='flex flex-row h-[90%] justify-center items-center content-center'>
               <div className="flex justify-end w-[20%]">
                 <Image
@@ -92,7 +92,7 @@ const Carousel = () => {
           </div>
 
           {/* Slide 3 */}
-          <div className="slide container bg-[#FFE680] rounded-lg p-6 md:p-8 shadow-lg">
+          <div className="slide container bg-[#FFD521] rounded-lg p-6 md:p-8 shadow-lg">
             <div className='flex flex-row h-[90%] justify-center items-center content-center'>
               <div className="flex justify-end w-[20%]">
                 <Image
@@ -115,7 +115,7 @@ const Carousel = () => {
           </div>
 
           {/* Slide 4 */}
-          <div className="slide container bg-[#FFE680] flex flex-col items-center justify-center content-center rounded-lg p-6 md:p-8 shadow-lg">
+          <div className="slide container bg-[#FFD521] flex flex-col items-center justify-center content-center rounded-lg p-6 md:p-8 shadow-lg">
             <div className="flex items-center justify-center">
               <Image
                 src="/settings-unscreen.gif"

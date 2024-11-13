@@ -1,28 +1,26 @@
-'use client'
-
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Slider from "react-slick"
 
 const PopularItemsSlider = ({ isLoading, popularItems, handleClick, URL }) => {
   const [isDragging, setIsDragging] = useState(false)
-
   const [isAutoplaying, setIsAutoplaying] = useState(true);
 
   const adjustedSettings = {
     dots: false,
-    infinite: popularItems.length > 5,
+    infinite: true, 
     slidesToShow: popularItems.length > 0 ? Math.min(5, popularItems.length) : 1,
-    slidesToScroll: 1,
-    speed: 1000,
-    arrows: false,
+    slidesToScroll: 1, 
+    speed: 2000, 
     autoplay: true,
-    autoplaySpeed: 2000,
-    cssEase: 'ease-in-out',
-    //pauseOnHover: true,
-    
+    arrows: false,
+    autoplaySpeed: 0, 
+    cssEase: 'linear', 
     pauseOnFocus: true,
+    pauseOnHover: true,
     swipe: true,
+    swipeToSlide: true,
+    //variableWidth: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -38,13 +36,12 @@ const PopularItemsSlider = ({ isLoading, popularItems, handleClick, URL }) => {
       }
     ],
     beforeChange: () => setIsAutoplaying(false),  
-    afterChange: () => setIsAutoplaying(true),    
+    afterChange: () => setIsAutoplaying(true), 
   };
 
-
-  const handleMouseDown = () => setIsDragging(false)
-  const handleMouseMove = () => setIsDragging(true)
-  const handleMouseUp = (item) => !isDragging && handleClick(item)
+  const handleMouseDown = () => setIsDragging(false);
+  const handleMouseMove = () => setIsDragging(true);
+  const handleMouseUp = (item) => !isDragging && handleClick(item);
 
   return (
     <>
@@ -73,8 +70,6 @@ const PopularItemsSlider = ({ isLoading, popularItems, handleClick, URL }) => {
               <div className="flex justify-center items-center h-auto">
                 <div className="flex justify-center items-center w-[200px] h-[200px] rounded-full shadow-md"
                   style={{ clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%,  0% 30% )' }}>
-                    {/* clip-path: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%,  0% 30% )' */}
-                    {/* clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' */}
                   <Image
                     src={`${URL}${item.logo}`}
                     alt={item.name}
@@ -97,4 +92,4 @@ const PopularItemsSlider = ({ isLoading, popularItems, handleClick, URL }) => {
   )
 }
 
-export default PopularItemsSlider
+export default PopularItemsSlider;
