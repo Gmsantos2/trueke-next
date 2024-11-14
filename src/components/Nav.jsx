@@ -18,7 +18,7 @@ export default function Nav() {
     return (
         <nav className='w-full top-0 left-0 h-[80px] fixed bg-[#0033ff9f] border-b-[1px] backdrop-blur-sm z-10'>
             <div className='flex w-full h-full justify-between items-center'>
-                <div className='pl-7  w-[210px] '>
+                <div className='flex flex-1 pl-7 w-[210px] '>
                     <Image src='/trueke.png' width={200} height={80} className='max-w-[100%] max-h-auto' alt="trueke logo" />
                 </div>
 

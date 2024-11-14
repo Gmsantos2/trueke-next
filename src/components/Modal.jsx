@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 
-const Modal = ({ modalItems, handleCloseModal, handleClick, URL }) => {
+const Modal = ({ modalItems, handleCloseModal, handleClick, URL, NameCity }) => {
   const [isDragging, setIsDragging] = useState(false)
 
   const handleMouseDown = () => setIsDragging(false)
@@ -12,9 +12,16 @@ const Modal = ({ modalItems, handleCloseModal, handleClick, URL }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white pb-2 rounded-lg p-4 h-[90vh] w-[90vw]">
+      <div className=" container mx-auto bg-white pb-2 rounded-lg p-4 h-[90vh] w-[90vw]">
         <div className="flex justify-between pb-3">
-          <h2 className="font-montserrat text-lg">Store</h2>
+          {
+            NameCity !== ''  ? (
+              <h2 className='font-montserrat text-lg text-black'> Resultados para la ubicacion {NameCity}</h2>
+            ):( 
+              <h2 className="font-montserrat text-lg text-black">Tiendas</h2>
+            )
+          }
+          
           <button onClick={handleCloseModal} className="bg-red-600 text-white p-2 rounded">
             Cerrar
           </button>

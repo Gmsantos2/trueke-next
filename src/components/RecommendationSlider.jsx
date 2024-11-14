@@ -42,10 +42,6 @@ const RecommendationSlider = ({ allRecomendations, handleOpenModal, displayedIte
     ]
   }
 
-  const handleMouseDown = () => setIsDragging(false)
-  const handleMouseMove = () => setIsDragging(true)
-  const handleMouseUp = () => !isDragging && handleClick()
-
   return (
     <div className="slider-1 p-3">
       <Slider {...settingsRecomendation}>
@@ -55,17 +51,12 @@ const RecommendationSlider = ({ allRecomendations, handleOpenModal, displayedIte
           allRecomendations.map((item) => (
             <div
               key={item.id}
-              onClick={() => setSelectedCity(item.city)}
+              onClick={() => setSelectedCity(item.nombre)}
               className="p-2 flex justify-center items-center content-center zoom"
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={() => handleMouseUp(item)}
-              onTouchStart={handleMouseDown}
-              onTouchMove={handleMouseMove}
-              onTouchEnd={() => handleMouseUp(item)}
+              
             >
               <div className="flex justify-center w-full items-center max-sm:h-[50vw]">
-                <div onClick={() => handleOpenModal(displayedItems)} className="relative flex justify-center items-center w-[290px] h-[290px]">
+                <div onClick={() => handleOpenModal(displayedItems, item.nombre)} className="relative flex justify-center items-center w-[290px] h-[290px]">
                   <Image
                     src={item.imagen}
                     alt={item.nombre}

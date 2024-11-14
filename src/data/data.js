@@ -56,7 +56,7 @@ export const data2 = {
         "imagen": "https://example.com/costa.jpg",
         "provincias": [
           {
-            "nombre": "Guayas",
+            "nombre": "San Antonio",
             "id": "PRO02",
             "descripcion": "Provincia con la ciudad más grande de Ecuador, Guayaquil.",
             "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWbvz-YsiSK3MMKq0jxFnNEk4g0wDnzSwCVg&s",
@@ -100,7 +100,7 @@ export const data2 = {
         "imagen": "https://example.com/sierra-centro.jpg",
         "provincias": [
           {
-            "nombre": "Azuay",
+            "nombre": "San Pedro de Vilcabamba",
             "id": "PRO03",
             "descripcion": "Provincia famosa por su arquitectura colonial y producción artesanal.",
             "imagen": "https://ec.viajandox.com/uploads/min_Catedral%20Nueva_4.jpg",

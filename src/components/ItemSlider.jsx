@@ -88,12 +88,12 @@ const ItemSlider = ({ isLoading, displayedItems, handleClick, handleOpenModal, U
                       alt={item.name}
                       width={220}
                       height={220}
-                      className="w-full h-full object-cover shadow-2xl text-center"
+                      className="w-full h-full object-cover shadow-2xl text-center rounded-md"
                     />
                   </div>
                 </div>
                 <div className="flex justify-center">
-                  <p className="text-center font-montserrat font-extralight text-white mt-2 w-[200px]">
+                  <p className="text-center font-montserrat font-extralight text-white mt-2 w-[200px] line-clamp-2">
                     {item.name}
                   </p>
                 </div>

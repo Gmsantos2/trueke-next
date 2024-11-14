@@ -47,7 +47,7 @@ const About = () => {
                             <div className="hidden sm:block w-20 sm:w-64 h-1 bg-[#1E1E1E]"></div>
                         </div>
 
-                        <div className="flex flex-col lg:flex-row justify-center gap-7 w-full items-stretch">
+                        <div className="flex flex-col  justify-center gap-7 w-full items-stretch">
                             {/* Quienes somos */}
                             <div className="flex flex-1 flex-col justify-between items-stretch bg-white rounded-lg p-4 h-auto mb-4 md:mb-2">
                                 <Rotate>

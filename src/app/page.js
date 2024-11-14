@@ -14,8 +14,8 @@ export default function Home() {
       <Nav />
       <main className='bg-[#0033FF] h-auto min-h-screen overflow-hidden z-[-10]' id='home'>
         <div className='bg-radial-gradient bg-fixed max-sm:!bg-[#001f9960]'>
-          <section className="mt-20 flex bg-cover">
-            <div className='triangle max-lg:hidden'></div>
+          <section className="mt-20 flex bg-cover bg-gray-400">
+            {/* <div className='triangle max-lg:hidden'></div> */}
             <Hero />
           </section>
           <section className='h-min-screen mt-10 '>

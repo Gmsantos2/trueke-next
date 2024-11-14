@@ -18,6 +18,7 @@ const HeadSection = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedType, setSelectedType] = useState('')
   const [selectedCity, setSelectedCity] = useState('')
+  const [NameCity, setNameCity] = useState('')
   const [popularItems, setPopularItems] = useState([])
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(true)
@@ -84,15 +85,19 @@ const HeadSection = () => {
     });
     // Actualizamos el estado con los elementos filtrados
     setFilteredByCity(filtered);
-  }, [data, selectedCity]);  // Dependemos de `data` y `selectedCity`
+  }, [selectedCity]);  // Dependemos de `selectedCity`
   
-  console.log(filteredByCity);
-  const handleOpenModal = (items) => {
-    setModalItems(items)
+  console.log(data)
+  const handleOpenModal = (item, name) => {
+    if (name){
+      setNameCity(name)
+    }
+    setModalItems(item)
     setIsModalOpen(true)
   }
 
   const handleCloseModal = () => {
+    setNameCity('')
     setIsModalOpen(false)
   }
 
@@ -110,7 +115,7 @@ const HeadSection = () => {
       <h2 className="text-xl font-bold font-montserrat text-white pt-6">Recomendaciones para ti</h2>
       <RecommendationSlider allRecomendations={data2.pais.regiones.flatMap((data) =>
         data.provincias.map((item) => ({ ...item, place_name: data.nombre }))
-      )}  handleOpenModal={handleOpenModal} displayedItems={filteredByCity} setSelectedCity={setSelectedCity} />
+      )}  handleOpenModal={handleOpenModal} displayedItems={filteredByCity} setSelectedCity={setSelectedCity} handleCitySelect={handleCitySelect} />
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       
       <TypeFilter data={data} selectedType={selectedType} setSelectedType={setSelectedType} />
@@ -138,6 +143,7 @@ const HeadSection = () => {
           handleCloseModal={handleCloseModal} 
           handleClick={handleClick}
           URL={URL}
+          NameCity={NameCity}
         />
       )}
     </div>
