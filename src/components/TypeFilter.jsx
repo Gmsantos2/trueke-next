@@ -33,13 +33,13 @@ const TypeFilter = ({ data, selectedType, setSelectedType }) => {
   };
 
   return (
-    <div className="bg-yellow-400 rounded-3xl my-5 px-4">
+    <div className="bg-yellow-400 my-5 px-4 rounded-xl rounded-br-3xl">
       <Slider {...settings}>
         {[...new Set(data.map((shop) => shop.type))].map((type) => (
           <button
             key={type}
             onClick={() => setSelectedType(type)}
-            className={`bg-[#FFD521] truncate p-1 m-4 min-w-[130px] text-center font-montserrat text-[#1E1E1E] rounded-lg shadow hover:bg-gray-400 whitespace-nowrap ${
+            className={`bg-[#FFD521] truncate p-1 m-4 min-w-[130px] text-center font-montserrat font-bold text-[#0062FF] rounded-lg shadow hover:bg-gray-400 whitespace-nowrap ${
               selectedType === type ? 'bg-gray-400' : ''
             }`}
           >
@@ -50,7 +50,7 @@ const TypeFilter = ({ data, selectedType, setSelectedType }) => {
         {/* Botón de "Todos" dentro del carrusel */}
         <button
           onClick={() => setSelectedType(null)}
-          className={`bg-[#FFD521] p-1 m-4 min-w-[100px] text-center font-montserrat text-[#1E1E1E] rounded-lg shadow hover:bg-gray-400 whitespace-nowrap ${
+          className={`bg-[#FFD521] p-1 m-4 min-w-[100px] text-center font-montserrat font-bold text-[#0062FF] rounded-lg shadow hover:bg-gray-400 whitespace-nowrap ${
             selectedType === null ? 'bg-gray-400' : ''
           }`}
         >

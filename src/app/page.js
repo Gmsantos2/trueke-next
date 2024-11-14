@@ -12,11 +12,16 @@ export default function Home() {
   return (
     <div id="__next">
       <Nav />
-      <main className='bg-[#0033FF] h-auto min-h-screen overflow-hidden z-[-10]' id='home'>
-        <div className='bg-radial-gradient bg-fixed max-sm:!bg-[#001f9960]'>
-          <section className="mt-20 flex bg-cover bg-gray-400">
+      <main className='bg-[#0062FF] h-auto min-h-screen overflow-hidden z-[-10]' id='home'>
+        <div className='bg-fixed max-sm:!bg-[#0062FF]'>
+          <section className="relative mt-20 flex bg-cover bg-custom-linear -z-0">
             {/* <div className='triangle max-lg:hidden'></div> */}
             <Hero />
+            <div className="flex absolute -bottom-5 left-10 items-center">
+            <span className="bg-yellow-400 text-[#0062FF] font-montserrat font-bold text-xl px-4 py-2 rounded-lg rounded-br-3xl">
+              Recomendaciones para ti
+            </span>
+          </div>
           </section>
           <section className='h-min-screen mt-10 '>
             <HeadSection />
@@ -29,7 +34,7 @@ export default function Home() {
           <About />
         </section>
         <section id='benefit' className='relative bg-[#0033FF]  bg-cover h-[85vh] w-full flex justify-center items-center'>
-        {/* bg-[url("https://st.depositphotos.com/2125215/2599/v/450/depositphotos_25996281-stock-illustration-blue-circles-with-sparkles-vector.jpg")] */}
+          {/* bg-[url("https://st.depositphotos.com/2125215/2599/v/450/depositphotos_25996281-stock-illustration-blue-circles-with-sparkles-vector.jpg")] */}
           <Carousel />
         </section>
         <section className='relative h-min-screen bg-[#FFD521]'>

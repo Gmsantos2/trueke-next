@@ -34,22 +34,24 @@ export default function Nav() {
                 </div>
 
                 {/* Menú horizontal para pantallas grandes */}
-                <div className={`hidden md:flex w-[80%] justify-center`}>
-                    <ul className='flex gap-3 items-center font-montserrat font-semibold text-lg '>
-                        <li className='flex text-white p-7 transition-transform duration-500 hover:scale-125'>
-                            <Link href="/" className='text-lg'>Inicio</Link>
+                <div className="hidden md:flex w-[75%] justify-center">
+                    <ul className="flex gap-3 items-center font-montserrat !font-light !text-lg">
+                        <li className="flex  text-white py-0 px-5 transition-transform duration-500 hover:scale-125 first:border-l-0 border-l-2 border-yellow-500">
+                            <Link href="/" className="">Inicio</Link>
                         </li>
-                        <li className='flex text-white p-7 transition-transform duration-500 hover:scale-125'>
-                            <Link href="#about" className='text-lg'>Sobre nosotros</Link>
+                        <li className="flex text-white py-0 px-5 transition-transform duration-500 hover:scale-125 border-l-2 border-yellow-500">
+                            <Link href="#about" className="">Sobre Nosotros</Link>
                         </li>
-                        <li className='flex text-white p-7 transition-transform duration-500 hover:scale-125'>
-                            <Link href="#benefit" className='text-lg'>Beneficios</Link>
+                        <li className="flex text-white py-0 px-5 transition-transform duration-500 hover:scale-125 border-l-2 border-yellow-500">
+                            <Link href="#benefit" className="">Beneficios</Link>
                         </li>
-                        <li className='flex text-white p-7 transition-transform duration-500 hover:scale-125'>
-                            <Link href="#contact" className='text-lg'>Contáctanos</Link>
+                        <li className="flex text-white py-0 px-5 transition-transform duration-500 hover:scale-125 border-l-2 border-yellow-500">
+                            <Link href="#contact" className="">Contáctanos</Link>
                         </li>
                     </ul>
                 </div>
+
+
             </div>
 
             {/* Menú vertical para pantallas pequeñas con botón de cierre */}

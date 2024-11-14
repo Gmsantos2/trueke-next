@@ -86,10 +86,10 @@ const HeadSection = () => {
     // Actualizamos el estado con los elementos filtrados
     setFilteredByCity(filtered);
   }, [selectedCity]);  // Dependemos de `selectedCity`
-  
+
   console.log(data)
   const handleOpenModal = (item, name) => {
-    if (name){
+    if (name) {
       setNameCity(name)
     }
     setModalItems(item)
@@ -108,39 +108,39 @@ const HeadSection = () => {
   const handleCitySelect = (cityName) => {
     setSelectedCity(cityName);  // `cityName` es `data.nombre`
   };
-  
+
 
   return (
     <div className="container mx-auto min-h-screen p-4 max-sm:p-2 pt-16 lg:pt-8 max-sm:pt-1 pb-8" id="head">
-      <h2 className="text-xl font-bold font-montserrat text-white pt-6">Recomendaciones para ti</h2>
+
       <RecommendationSlider allRecomendations={data2.pais.regiones.flatMap((data) =>
         data.provincias.map((item) => ({ ...item, place_name: data.nombre }))
-      )}  handleOpenModal={handleOpenModal} displayedItems={filteredByCity} setSelectedCity={setSelectedCity} handleCitySelect={handleCitySelect} />
+      )} handleOpenModal={handleOpenModal} displayedItems={filteredByCity} setSelectedCity={setSelectedCity} handleCitySelect={handleCitySelect} />
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      
+
       <TypeFilter data={data} selectedType={selectedType} setSelectedType={setSelectedType} />
-      
-      <ItemSlider 
-        isLoading={isLoading} 
-        displayedItems={displayedItems} 
+
+      <ItemSlider
+        isLoading={isLoading}
+        displayedItems={displayedItems}
         handleClick={handleClick}
         handleOpenModal={handleOpenModal}
         URL={URL}
       />
 
-      <h2 className="text-xl font-bold font-montserrat text-white mb-6 pt-6">Popular</h2>
-      
-      <PopularItemsSlider 
-        isLoading={isLoading} 
-        popularItems={popularItems} 
+      <h2 className="text-3xl font-bold font-montserrat text-white mb-6 pt-6">Populares</h2>
+
+      <PopularItemsSlider
+        isLoading={isLoading}
+        popularItems={popularItems}
         handleClick={handleClick}
         URL={URL}
       />
 
       {isModalOpen && (
-        <Modal 
-          modalItems={modalItems} 
-          handleCloseModal={handleCloseModal} 
+        <Modal
+          modalItems={modalItems}
+          handleCloseModal={handleCloseModal}
           handleClick={handleClick}
           URL={URL}
           NameCity={NameCity}
