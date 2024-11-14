@@ -17,11 +17,13 @@ const HeadSection = () => {
   const [data, setData] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedType, setSelectedType] = useState('')
+  const [selectedCity, setSelectedCity] = useState('')
   const [popularItems, setPopularItems] = useState([])
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(true)
   const [filteredItems, setFilteredItems] = useState([])
   const [displayedItems, setDisplayedItems] = useState([])
+  const [filteredByCity, setFilteredByCity] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalItems, setModalItems] = useState([])
   const limit = 100
@@ -75,6 +77,16 @@ const HeadSection = () => {
     setDisplayedItems(filtered.slice(0, 30))
   }, [data, selectedType, searchTerm])
 
+  useEffect(() => {
+    const filtered = data.filter(item => {
+      // Filtramos por la ciudad
+      return selectedCity ? item.city === selectedCity : true;
+    });
+    // Actualizamos el estado con los elementos filtrados
+    setFilteredByCity(filtered);
+  }, [data, selectedCity]);  // Dependemos de `data` y `selectedCity`
+  
+  console.log(filteredByCity);
   const handleOpenModal = (items) => {
     setModalItems(items)
     setIsModalOpen(true)
@@ -88,17 +100,17 @@ const HeadSection = () => {
     router.push(`/item/${item._id}`)
   }
 
-  const handleClickPlaces = (item) => {
-    router.push(`/place/${item.id}`)
-  }
+  const handleCitySelect = (cityName) => {
+    setSelectedCity(cityName);  // `cityName` es `data.nombre`
+  };
+  
 
   return (
     <div className="container mx-auto min-h-screen p-4 max-sm:p-2 pt-16 lg:pt-8 max-sm:pt-1 pb-8" id="head">
       <h2 className="text-xl font-bold font-montserrat text-white pt-6">Recomendaciones para ti</h2>
       <RecommendationSlider allRecomendations={data2.pais.regiones.flatMap((data) =>
         data.provincias.map((item) => ({ ...item, place_name: data.nombre }))
-      )}  handleClick={handleClick} handleOpenModal={handleOpenModal} displayedItems={displayedItems} />
-      {/* handleClickPlaces={handleClickPlaces} */}
+      )}  handleOpenModal={handleOpenModal} displayedItems={filteredByCity} setSelectedCity={setSelectedCity} />
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       
       <TypeFilter data={data} selectedType={selectedType} setSelectedType={setSelectedType} />

@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Slider from "react-slick"
 
-const RecommendationSlider = ({ allRecomendations, handleClick , handleOpenModal, displayedItems  }) => {
+const RecommendationSlider = ({ allRecomendations, handleOpenModal, displayedItems, setSelectedCity  }) => {
   const [isDragging, setIsDragging] = useState(false)
 
   const settingsRecomendation = {
@@ -55,6 +55,7 @@ const RecommendationSlider = ({ allRecomendations, handleClick , handleOpenModal
           allRecomendations.map((item) => (
             <div
               key={item.id}
+              onClick={() => setSelectedCity(item.city)}
               className="p-2 flex justify-center items-center content-center zoom"
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
