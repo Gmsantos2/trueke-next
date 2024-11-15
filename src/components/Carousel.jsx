@@ -41,12 +41,12 @@ const Carousel = () => {
 
   return (
     <div className="slider-2 relative carousel-container max-lg:w-[90vw] py-8">
-      <h2 className="text-center text-[#ffff] font-semibold font-montserrat text-2xl md:text-3xl mb-8 pt-10">
+      <h2 className="text-center text-[#ffff] font-semibold font-montserrat text-2xl md:text-3xl mb-8">
         ¿Por qué elegir TRUEKE?
       </h2>
       <JackInTheBox>
         <Slider {...settings}>
-          <div className="slide container bg-[#FFD521] rounded-lg p-6 md:p-8 shadow-lg">
+          <div className="slide container bg-[#FFD521] rounded-3xl p-6 md:p-8 shadow-lg">
             <div className='flex flex-row h-[90%] justify-center items-center content-center'>
               <div className="flex justify-end w-[20%]">
                 <Image
@@ -69,7 +69,7 @@ const Carousel = () => {
           </div>
 
           {/* Slide 2 */}
-          <div className="slide container bg-[#FFD521] rounded-lg p-6 md:p-8 shadow-lg">
+          <div className="slide container bg-[#FFD521] rounded-3xl p-6 md:p-8 shadow-lg">
             <div className='flex flex-row h-[90%] justify-center items-center content-center'>
               <div className="flex justify-end w-[20%]">
                 <Image
@@ -92,7 +92,7 @@ const Carousel = () => {
           </div>
 
           {/* Slide 3 */}
-          <div className="slide container bg-[#FFD521] rounded-lg p-6 md:p-8 shadow-lg">
+          <div className="slide container bg-[#FFD521] rounded-3xl p-6 md:p-8 shadow-lg">
             <div className='flex flex-row h-[90%] justify-center items-center content-center'>
               <div className="flex justify-end w-[20%]">
                 <Image
@@ -115,7 +115,7 @@ const Carousel = () => {
           </div>
 
           {/* Slide 4 */}
-          <div className="slide container bg-[#FFD521] flex flex-col items-center justify-center content-center rounded-lg p-6 md:p-8 shadow-lg">
+          <div className="slide container bg-[#FFD521] flex flex-col items-center justify-center content-center rounded-3xl p-6 md:p-8 shadow-lg">
             <div className="flex items-center justify-center">
               <Image
                 src="/settings-unscreen.gif"

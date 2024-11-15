@@ -11,7 +11,7 @@ const Footer = () => {
                 {/* Logo */}
                 <Slide>
                     <div className='mb-2 md:mb-0 flex justify-center items-center'>
-                        <div className='w-52 max-sm:w-40 bg-[#0033FF] p-2 rounded-2xl'>
+                        <div className='w-52 max-sm:w-40 bg-[#0062FF] p-2 rounded-2xl'>
                             <img src="/trueke.png" alt="Logo" className='w-full' />
                         </div>
                     </div>
@@ -44,17 +44,17 @@ const Footer = () => {
                 <Flip>
                     <div className='text-center md:text-left flex justify-center items-center'>
                         <ul className='flex flex-col gap-2 text-white text-base font-montserrat space-y-1 h-full'>
-                            <li className= 'bg-[#0033FF] rounded-md p-1'>
+                            <li className= 'bg-[#0062FF] rounded-md p-1'>
                                 <a href="#" className='hover:text-[#FFD521] p-2 rounded transition-colors duration-300'>
                                     Sobre nosotros
                                 </a>
                             </li>
-                            <li className= 'bg-[#0033FF] rounded-md p-1'>
+                            <li className= 'bg-[#0062FF] rounded-md p-1'>
                                 <a href="#" className='hover:text-[#FFD521] p-2 rounded transition-colors duration-300'>
                                     Beneficios
                                 </a>
                             </li>
-                            <li className= 'bg-[#0033FF] rounded-md p-1'>
+                            <li className= 'bg-[#0062FF] rounded-md p-1'>
                                 <a href="#" className='hover:text-[#FFD521] p-2 rounded transition-colors duration-300'>
                                     Contacto
                                 </a>

@@ -4,7 +4,7 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <div className='relative bg-[#0033FF] h-auto w-full flex flex-col justify-start items-start px-4 pb-2'>
+        <div className='relative bg-[#0062FF] h-auto w-full flex flex-col justify-start items-start px-4 pb-2'>
             <div className='pt-8'>
                 <h2 className="text-white text-2xl md:text-4xl font-semibold px-4 md:px-11">Contacta con nosotros</h2>
             </div>

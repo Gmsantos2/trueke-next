@@ -29,11 +29,11 @@ export default function Home() {
           </section>
         </div>
         <section className='relative h-min-screen w-full' id='about'>
-          <div className='bg-[#FFD521] h-min-screen w-full absolute inset-0 z-[0]'>
+          <div className='bg-gradient-to-b from-[#c4a41a] from-0% via-[#FFD521] via-30% to-[#FFD521] to-90% h-min-screen w-full absolute inset-0 z-[0]'>
           </div>
           <About />
         </section>
-        <section id='benefit' className='relative bg-[#0033FF]  bg-cover h-[85vh] w-full flex justify-center items-center'>
+        <section id='benefit' className='relative bg-[#0062FF]  bg-cover h-[85vh] w-full flex justify-center items-center'>
           {/* bg-[url("https://st.depositphotos.com/2125215/2599/v/450/depositphotos_25996281-stock-illustration-blue-circles-with-sparkles-vector.jpg")] */}
           <Carousel />
         </section>
