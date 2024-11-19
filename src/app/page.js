@@ -33,11 +33,11 @@ export default function Home() {
           </div>
           <About />
         </section>
-        <section id='benefit' className='relative bg-[#0062FF]  bg-cover h-[85vh] w-full flex justify-center items-center'>
+        <section id='benefit' className='relative bg-[#FFFF]  bg-cover h-[85vh] w-full flex justify-center items-center'>
           {/* bg-[url("https://st.depositphotos.com/2125215/2599/v/450/depositphotos_25996281-stock-illustration-blue-circles-with-sparkles-vector.jpg")] */}
           <Carousel />
         </section>
-        <section className='relative h-min-screen bg-[#FFD521]'>
+        <section className='relative h-min-screen bg-custom-linear'>
           <div className='container mx-auto'>
             <Features />
           </div>

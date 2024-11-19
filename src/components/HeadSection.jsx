@@ -7,7 +7,7 @@ import SearchBar from "./SearchBar"
 import TypeFilter from "./TypeFilter"
 import RecommendationSlider from "./RecommendationSlider"
 import ItemSlider from "./ItemSlider"
-import PopularItemsSlider from "./PopulasItemsSlider"
+import PopularItemsSlider from "./PopularItemsSlider"
 import Modal from "./Modal"
 import { data2 } from "../data/data"
 

@@ -46,7 +46,7 @@
 /* Opcional: Cambiar el color */
 .slider-2 .slick-prev:before,
 .slider-2 .slick-next:before {
-  color: #1E1E1E; /* Cambia el color de los íconos */
+  color: #f6f6f6; /* Cambia el color de los íconos */
   transform: scale(1.5); /* Escalar íconos */
   font-size: 55px;
 }
