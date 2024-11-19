@@ -37,7 +37,7 @@ export default function Nav() {
                 <div className="hidden md:flex w-[75%] justify-center">
                     <ul className="flex gap-3 items-center font-montserrat !font-light !text-lg">
                         <li className="flex  text-white py-0 px-5 transition-transform duration-500 hover:scale-125 first:border-l-0 border-l-2 border-yellow-500">
-                            <Link href="/" className="">Inicio</Link>
+                            <Link href="#home" className="">Inicio</Link>
                         </li>
                         <li className="flex text-white py-0 px-5 transition-transform duration-500 hover:scale-125 border-l-2 border-yellow-500">
                             <Link href="#about" className="">Sobre Nosotros</Link>
@@ -50,8 +50,6 @@ export default function Nav() {
                         </li>
                     </ul>
                 </div>
-
-
             </div>
 
             {/* Menú vertical para pantallas pequeñas con botón de cierre */}
@@ -68,7 +66,7 @@ export default function Nav() {
 
                 <ul className='flex flex-col gap-4 items-center font-montserrat font-semibold text-lg py-6'>
                     <li className='text-white hover:bg-white hover:text-[#0033FF] w-full py-4 transition duration-300 ease-in-out'>
-                        <Link href="/" onClick={closeMenu} className='block w-full text-lg'>Inicio</Link>
+                        <Link href="#home" onClick={closeMenu} className='block w-full text-lg'>Inicio</Link>
                     </li>
                     <li className='text-white hover:bg-white hover:text-[#0033FF] w-full py-4 transition duration-300 ease-in-out'>
                         <Link href="#about" onClick={closeMenu} className='block w-full text-lg'>Sobre nosotros</Link>

@@ -62,3 +62,25 @@
 }
 
 
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  gap: 1rem;
+  will-change: transform;
+}
+
+.embla__slide {
+  flex: 0 0 auto;
+  position: relative;
+}

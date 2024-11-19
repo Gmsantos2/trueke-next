@@ -30,6 +30,7 @@ const HeadSection = () => {
   const limit = 100
   const skip = 0
   const URL = 'https://trueke.nodo.com.ec'
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -106,7 +107,7 @@ const HeadSection = () => {
   }
 
   const handleCitySelect = (cityName) => {
-    setSelectedCity(cityName);  // `cityName` es `data.nombre`
+    setSelectedCity(cityName);  
   };
 
 

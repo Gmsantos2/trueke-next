@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <div id="__next">
       <Nav />
-      <main className='bg-[#0062FF] h-auto min-h-screen overflow-hidden z-[-10]' id='home'>
-        <div className='bg-fixed max-sm:!bg-[#0062FF]'>
+      <main className='bg-[#0062FF] h-auto min-h-screen overflow-hidden z-[-10] '>
+        <div className='bg-fixed max-sm:!bg-[#0062FF]' id='home'>
           <section className="relative mt-20 flex bg-cover bg-custom-linear -z-0">
             {/* <div className='triangle max-lg:hidden'></div> */}
             <Hero />
@@ -28,7 +28,7 @@ export default function Home() {
             {/* <Map />  */}
           </section>
         </div>
-        <section className='relative h-min-screen w-full' id='about'>
+        <section className='relative h-min-screen w-full ' id='about'>
           <div className='bg-gradient-to-b from-[#c4a41a] from-0% via-[#FFD521] via-30% to-[#FFD521] to-90% h-min-screen w-full absolute inset-0 z-[0]'>
           </div>
           <About />

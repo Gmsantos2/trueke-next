@@ -11,6 +11,9 @@
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
     "axios": "^1.7.7",
+    "embla-carousel": "^8.4.0",
+    "embla-carousel-autoplay": "^8.4.0",
+    "embla-carousel-react": "^8.4.0",
     "leaflet": "^1.9.4",
     "lodash": "^4.17.21",
     "next": "15.0.3",
