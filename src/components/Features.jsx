@@ -37,7 +37,7 @@ const Features = () => {
               <Slide>
                 <li className='flex gap-2 py-1 items-start'>
                   <Image src="/checkbox-circle-fill.png" alt="" width={20} height={20} className='object-contain' />
-                  <h3 className='text-[#0062FF] text-xs lg:text-base font-montserrat font-normal text-justify'>
+                  <h3 className='text-[#0062FF] text-xs lg:text-base font-montserrat font-normal '>
                     No se necesita introducir datos manualmente.
                   </h3>
                 </li>
@@ -45,7 +45,7 @@ const Features = () => {
               <Slide>
                 <li className='flex gap-2 py-1 items-start'>
                   <Image src="/checkbox-circle-fill.png" alt="" width={20} height={20} className='object-contain' />
-                  <h3 className='text-[#0062FF] text-xs lg:text-base font-montserrat font-normal text-justify'>
+                  <h3 className='text-[#0062FF] text-xs lg:text-base font-montserrat font-normal '>
                     Transacciones protegidas mediante cifrado avanzado.
                   </h3>
                 </li>
@@ -53,7 +53,7 @@ const Features = () => {
               <Slide>
                 <li className='flex gap-2 py-1 items-start'>
                   <Image src="/checkbox-circle-fill.png" alt="" width={20} height={20} className='object-contain' />
-                  <h3 className='text-[#0062FF] text-xs lg:text-base font-montserrat font-normal text-justify'>
+                  <h3 className='text-[#0062FF] text-xs lg:text-base font-montserrat font-normal'>
                     Ideal para un proceso de pago higiénico y sin contacto físico.
                   </h3>
                 </li>

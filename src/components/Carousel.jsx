@@ -69,7 +69,7 @@ const Carousel = () => {
           </div>
 
           {/* Slide 2 */}
-          <div className="slide container bg-[#FFD521] rounded-3xl p-6 md:p-8 shadow-lg">
+          <div className="slide container bg-[#0062FF] rounded-3xl p-6 md:p-8 shadow-lg">
             <div className='flex flex-row h-[90%] justify-center items-center content-center'>
               <div className="flex justify-end w-[20%]">
                 <Image
@@ -81,10 +81,10 @@ const Carousel = () => {
                 />
               </div>
               <div className="flex flex-col ml-6 w-[55%]">
-                <h3 className="text-xl md:text-2xl font-semibold font-montserrat text-left text-[#1E1E1E]">
+              <h3 className="text-xl md:text-3xl font-extrabold italic font-montserrat text-center text-[#FFD521]">
                   AUTOMATIZACIÓN DE CAMPAÑAS
                 </h3>
-                <p className="font-normal font-montserrat text-[#1E1E1E] text-left mt-4 text-sm md:text-base">
+                <p className="font-light font-montserrat text-[#ffffff] text-center mt-4 text-sm md:text-lg">
                   Automatiza y optimiza cada paso en tus campañas digitales.
                 </p>
               </div>
@@ -92,7 +92,7 @@ const Carousel = () => {
           </div>
 
           {/* Slide 3 */}
-          <div className="slide container bg-[#FFD521] rounded-3xl p-6 md:p-8 shadow-lg">
+          <div className="slide container bg-[#0062FF] rounded-3xl p-6 md:p-8 shadow-lg">
             <div className='flex flex-row h-[90%] justify-center items-center content-center'>
               <div className="flex justify-end w-[20%]">
                 <Image
@@ -104,10 +104,10 @@ const Carousel = () => {
                 />
               </div>
               <div className="flex flex-col ml-6 w-[55%]">
-                <h3 className="text-xl md:text-2xl font-semibold font-montserrat text-center text-[#1E1E1E]">
+              <h3 className="text-xl md:text-3xl font-extrabold italic font-montserrat text-center text-[#FFD521]">
                   ANÁLISIS DETALLADO
                 </h3>
-                <p className="font-normal font-montserrat text-[#1E1E1E] text-center mt-4 text-sm md:text-base">
+                <p className="font-light font-montserrat text-[#ffffff] text-center mt-4 text-sm md:text-lg">
                   Analiza cada métrica clave con reportes visuales detallados.
                 </p>
               </div>
@@ -115,22 +115,26 @@ const Carousel = () => {
           </div>
 
           {/* Slide 4 */}
-          <div className="slide container bg-[#FFD521] flex flex-col items-center justify-center content-center rounded-3xl p-6 md:p-8 shadow-lg">
-            <div className="flex items-center justify-center">
+          <div className="slide container bg-[#0062FF] rounded-3xl p-6 md:p-8 shadow-lg">
+            <div className='flex flex-row h-[90%] justify-center items-center content-center'>
+              <div className="flex justify-end w-[20%]">
               <Image
                 src="/settings-unscreen.gif"
                 alt="Icono 4"
                 width={80}
                 height={80}
-                className="object-cover mb-4"
+                className="object-cover"
               />
             </div>
-            <h3 className="text-xl md:text-2xl font-semibold font-montserrat text-center text-[#1E1E1E]">
+            <div className="flex flex-col ml-6 w-[55%]">
+            <h3 className="text-xl md:text-3xl font-extrabold italic font-montserrat text-center text-[#FFD521]">
               Personalización de Anuncios
             </h3>
-            <p className="font-normal font-montserrat text-[#1E1E1E] text-center mt-4 text-sm md:text-base">
+            <p className="font-light font-montserrat text-[#ffffff] text-center mt-4 text-sm md:text-lg">
               Personaliza el contenido y las ofertas en función de las preferencias de los usuarios para aumentar la relevancia.
             </p>
+            </div>
+          </div>
           </div>
         </Slider>
       </JackInTheBox>

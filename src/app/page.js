@@ -6,7 +6,10 @@ import Features from '../components/Features'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 //import Map from '../components/Map'
+import Map from '../components/Map'
 import HeadSection from '@/components/HeadSection'
+import dynamic from 'next/dynamic'
+
 
 export default function Home() {
   return (
@@ -25,7 +28,7 @@ export default function Home() {
           </section>
           <section className='h-min-screen mt-10 '>
             <HeadSection />
-            {/* <Map />  */}
+            <Map />
           </section>
         </div>
         <section className='relative h-min-screen w-full ' id='about'>

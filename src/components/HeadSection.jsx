@@ -81,14 +81,12 @@ const HeadSection = () => {
 
   useEffect(() => {
     const filtered = data.filter(item => {
-      // Filtramos por la ciudad
       return selectedCity ? item.city === selectedCity : true;
     });
-    // Actualizamos el estado con los elementos filtrados
     setFilteredByCity(filtered);
   }, [selectedCity]);  // Dependemos de `selectedCity`
 
-  console.log(data)
+  // console.log(data)
   const handleOpenModal = (item, name) => {
     if (name) {
       setNameCity(name)
