@@ -22,9 +22,9 @@ const About = () => {
             </div>
 
             <div className='flex flex-col h-auto relative items-center justify-start'>
-                <div className='flex h-auto justify-end w-full p-4 pr-12 pt-5'>
+                <div className='flex h-auto max-sm:justify-center justify-end w-full p-4 pr-12 max-sm:pr-0 pt-5'>
                     <Bounce>
-                        <h2 className=' w-[65vw] text-right text-balance text-xl sm:text-2xl md:text-5xl font-montserrat font-bold italic text-[#0062FF]'>
+                        <h2 className=' w-[65vw] text-right max-sm:text-center text-balance text-xl sm:text-2xl md:text-5xl font-montserrat font-bold italic text-[#0062FF]'>
                             Impulsando el Éxito de las Tiendas con Publicidad Efectiva
                         </h2>
                     </Bounce>
@@ -37,7 +37,7 @@ const About = () => {
                             {/* Línea izquierda */}
                             <div className="hidden sm:block w-8  h-1 bg-[#0062FF]"></div>
 
-                            <h1 className="text-lg text-[#0062FF] sm:text-2xl md:text-3xl font-semibold text-center tracking-wide">
+                            <h1 className="text-lg max-sm:hidden text-[#0062FF] sm:text-2xl md:text-3xl font-semibold text-center tracking-wide">
                                 SOBRE NOSOTROS
                             </h1>
 

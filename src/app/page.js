@@ -13,15 +13,15 @@ import dynamic from 'next/dynamic'
 
 export default function Home() {
   return (
-    <div id="__next">
+    <div  id="__next">
       <Nav />
       <main className='bg-[#0062FF] h-auto min-h-screen overflow-hidden z-[-10] '>
         <div className='bg-fixed max-sm:!bg-[#0062FF]' id='home'>
           <section className="relative mt-20 flex bg-cover bg-custom-linear -z-0">
             {/* <div className='triangle max-lg:hidden'></div> */}
             <Hero />
-            <div className="flex absolute -bottom-5 left-10 items-center">
-            <span className="bg-yellow-400 text-[#0062FF] font-montserrat font-bold text-xl px-4 py-2 rounded-lg rounded-br-3xl">
+            <div className="flex absolute -bottom-5 left-14 max-sm:left-4 items-center">
+            <span className="bg-yellow-400  text-[#0062FF] font-montserrat font-black text-2xl max-sm:text-lg px-4 py-2 rounded-lg rounded-br-3xl">
               Recomendaciones para ti
             </span>
           </div>

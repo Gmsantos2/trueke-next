@@ -7,7 +7,7 @@ import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 const Footer = () => {
     return (
         <footer className='bg-[#FFD521] py-4'>
-            <div className='container mx-auto flex flex-col md:flex-row items-center justify-between space-x-8 max-sm:space-x-0'>
+            <div className='container mx-auto flex flex-col md:flex-row items-center justify-between space-x-8 max-sm:space-x-0 px-4'>
                 {/* Logo */}
                 <Slide>
                     <div className='mb-2 md:mb-0 flex justify-center items-center'>
@@ -30,32 +30,32 @@ const Footer = () => {
                 {/* Social Media Icons */}
                 <div className="flex justify-start gap-5 text-[#FFD521]">
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                        <FaFacebookF size={24} fill='#1E1E1E' />
+                        <FaFacebookF size={24} fill='#0062FF' />
                     </a>
                     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                        <FaInstagram size={24} fill='#1E1E1E' />
+                        <FaInstagram size={24} fill='#0062FF' />
                     </a>
                     <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                        <FaTwitter size={24} fill='#1E1E1E' />
+                        <FaTwitter size={24} fill='#0062FF' />
                     </a>
                 </div>
 
                 {/* Links */}
                 <Flip>
-                    <div className='text-center md:text-left flex justify-center items-center'>
+                    <div className='flex justify-center items-center'>
                         <ul className='flex flex-col gap-2 text-white text-base font-montserrat space-y-1 h-full'>
                             <li className= 'bg-[#0062FF] rounded-md p-1'>
-                                <a href="#" className='hover:text-[#FFD521] p-2 rounded transition-colors duration-300'>
+                                <a href="#" className='hover:text-[#FFD521] rounded transition-colors duration-300'>
                                     Sobre nosotros
                                 </a>
                             </li>
                             <li className= 'bg-[#0062FF] rounded-md p-1'>
-                                <a href="#" className='hover:text-[#FFD521] p-2 rounded transition-colors duration-300'>
+                                <a href="#" className='hover:text-[#FFD521]  rounded transition-colors duration-300'>
                                     Beneficios
                                 </a>
                             </li>
                             <li className= 'bg-[#0062FF] rounded-md p-1'>
-                                <a href="#" className='hover:text-[#FFD521] p-2 rounded transition-colors duration-300'>
+                                <a href="#" className='hover:text-[#FFD521]  rounded transition-colors duration-300'>
                                     Contacto
                                 </a>
                             </li>

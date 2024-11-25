@@ -9,6 +9,7 @@ import Comments from '../components/Comments';
 import SocialIcon from '../components/SocialIcon';
 import { FiPhone, FiMapPin } from 'react-icons/fi';
 import Image from 'next/image'
+import SliderImg from './SliderImg';
 
 const Emoji = ({ averageScore }) => {
   if (averageScore >= 4) return '😃'; // Excelente
@@ -273,9 +274,12 @@ const ItemDetail = ({ id }) => {
           </div>
 
         </div>
-
-        <div className='h-80'></div>
+        <div className='h-[400px] p-4'>
+        <SliderImg />
+        </div>
+        <div>
         <Comments />
+        </div>
       </div>
     </div>
   );

@@ -48,13 +48,12 @@ const Map = () => {
   }
 
   return (
-    <div className="container mx-auto max-w-[1500px] relative">
-      <div className="flex max-md:flex-col h-full max-sm:justify-center max-sm:items-center">
-        <div className="flex flex-col w-[18vw] justify-start items-start p-2 max-md:w-[50vw] max-sm:w-[90vw]">
-          <h2 className="text-xl text-white font-bold font-montserrat mb-4">Selecciona un lugar</h2>
-          <div className="flex flex-1 justify-center items-center content-center mx-auto">
-            <p className="text-white font-montserrat text-2xl">¡Explora a donde quieras ir!</p>
-          </div>
+    <div className="container mx-auto max-w-[1500px] relative z-0">
+      <div className="relative flex max-md:flex-col h-full max-sm:justify-center max-sm:items-center">
+        <div className="absolute -top-5 left-14 max-sm:left-4 justify-start items-start p-2 max-md:w-[50vw] max-sm:w-[90vw] z-[1000]">
+        <span className="bg-yellow-400 text-[#0062FF] max-sm:text-lg font-montserrat font-black text-2xl px-4 py-2 rounded-lg rounded-br-3xl">
+              Selecciona un lugar
+            </span>
         </div>
         <div className="relative w-full h-full">
           <DynamicMap 

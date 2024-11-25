@@ -1,0 +1,29 @@
+.sliderImg {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliderImgItem {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+  transition: opacity 1s ease, transform 1.5s ease;
+}
+
+.sliderImgItem img {
+  object-fit: cover;
+}
+
+.animateOut {
+  opacity: 0;
+  transform: translateY(50px) scale(0.8) rotateX(30deg);
+}

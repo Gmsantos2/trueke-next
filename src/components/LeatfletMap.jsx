@@ -86,7 +86,7 @@ const LeafletMap = ({ places, currentPosition, selectedPlace, onPlaceSelect }) =
 
   return (
     <div className="relative">
-      <div className="absolute top-4 right-4 z-[1000] w-full max-w-[25%]">
+      <div className="absolute top-4 max-sm:top-12 right-4 z-[1000] w-full max-w-[25%]">
         <select
           className="w-full max-w-full p-2 mb-4 rounded font-montserrat border border-[#1E1E1E] text-[#1E1E1E] overflow-hidden"
           onChange={(e) => onPlaceSelect(e.target.value)}
